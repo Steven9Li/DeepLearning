@@ -24,8 +24,8 @@ if(__name__=='__main__'):
     epochs = 20
 
     #获取并归一化数据
-    train_data = analysis_data(train_data_path).astype('float32')
-    test_data = analysis_data(test_data_path).astype('float32')
+    train_data = analysis_data(train_data_path).astype('float32')/255
+    test_data = analysis_data(test_data_path).astype('float32')/255
     print(test_data.shape)
     train_labels = keras.utils.to_categorical(analysis_data(train_label_path))
     test_labels = keras.utils.to_categorical(analysis_data(test_label_path))
